@@ -4,7 +4,7 @@ from setuptools import setup
 
 setup(
     name='notsouid',
-    version='0.0.2',
+    version='0.0.3',
     description='not so unique ids',
     author='Nic West',
     author_email='oss@nicwest.com',
