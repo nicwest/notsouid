@@ -58,3 +58,16 @@ class TestWrapper:
             return uuid.uuid4()
 
         assert my_func() == uuid.UUID('00000000-0000-0000-0000-000000000001')
+        assert my_func() == uuid.UUID('00000000-0000-0000-0000-000000000001')
+        assert my_func() == uuid.UUID('00000000-0000-0000-0000-000000000001')
+        assert not str(uuid.uuid4()).startswith('00000000')
+
+    def test_decorator_params(self):
+
+        @freeze_uuid('abcd1234-0000-0000-0000-000000000001', auto_increment=True)
+        def my_func():
+            return uuid.uuid4()
+
+        assert my_func() == uuid.UUID('abcd1234-0000-0000-0000-000000000001')
+        assert my_func() == uuid.UUID('abcd1234-0000-0000-0000-000000000002')
+        assert my_func() == uuid.UUID('abcd1234-0000-0000-0000-000000000003')

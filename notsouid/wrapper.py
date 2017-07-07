@@ -10,6 +10,10 @@ class freeze_uuid(object):
         self._patches = []
 
     def start(self):
+        if self._patches:
+            for patcher in self._patches:
+                patcher.start()
+            return
         if self.str_in:
             v1 = UUID1Factory.from_string(
                 self.str_in,
