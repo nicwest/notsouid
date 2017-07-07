@@ -6,4 +6,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
-[Unreleased]: https://github.com/nicwest/notsouid/compare/0.0.1...HEAD
+## [0.0.2] - 2017-07-08
+### Fixed
+- decorator breaking on second call.
+
+[Unreleased]: https://github.com/nicwest/notsouid/compare/0.0.2...HEAD
+[0.0.2]: https://github.com/nicwest/notsouid/compare/0.0.1...0.0.2
