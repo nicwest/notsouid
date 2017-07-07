@@ -3,6 +3,8 @@ notsouid
 
 Quickly patch the dynamic/random uuid methods for testing.
 
+Inspired by [freezegun](https://github.com/spulec/freezegun)
+
 Installation
 ------------
 
