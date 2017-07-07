@@ -1,3 +1,4 @@
+import pytest
 import uuid
 from uuid import uuid1, uuid4
 from notsouid.wrapper import freeze_uuid
@@ -44,7 +45,16 @@ class TestWrapper:
             assert uuid.uuid4() == uuid.UUID('00000000-0000-0000-0000-000000000002')
             assert uuid.uuid4() == uuid.UUID('00000000-0000-0000-0000-000000000003')
 
+    @pytest.mark.xfail
     def test_direct_import(self):
         with freeze_uuid():
             assert uuid1() == uuid.UUID('00000001-0000-0000-0000-000000000000')
             assert uuid4() == uuid.UUID('00000000-0000-0000-0000-000000000001')
+
+    def test_decorator(self):
+
+        @freeze_uuid()
+        def my_func():
+            return uuid.uuid4()
+
+        assert my_func() == uuid.UUID('00000000-0000-0000-0000-000000000001')

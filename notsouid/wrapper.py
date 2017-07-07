@@ -35,6 +35,12 @@ class freeze_uuid(object):
         for patcher in self._patches:
             patcher.stop()
 
+    def __call__(self, f):
+        def wrapper(*args, **kwargs):
+            with self:
+                return f(*args, **kwargs)
+        return wrapper
+
     def __enter__(self):
         self.start()
 

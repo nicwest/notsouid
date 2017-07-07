@@ -63,3 +63,9 @@ class TestUUID4Factory:
 
         result = factory()
         assert result == uuid.UUID('00000000-0000-0000-0000-000000000003')
+
+    def test_auto_inc_overflow(self):
+        factory = factories.UUID4Factory(node=0xffffffffffff, auto_increment=True)
+        assert factory() == uuid.UUID('00000000-0000-0000-0000-ffffffffffff')
+        assert factory() == uuid.UUID('00000000-0000-0000-0000-000000000000')
+        assert factory() == uuid.UUID('00000000-0000-0000-0000-000000000001')
