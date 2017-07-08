@@ -1,3 +1,7 @@
+[![PyPI version](https://badge.fury.io/py/notsouid.svg)](https://badge.fury.io/py/notsouid)
+[![Build Status](https://travis-ci.org/nicwest/notsouid.svg?branch=master)](https://travis-ci.org/nicwest/notsouid)
+[![codecov](https://codecov.io/gh/nicwest/notsouid/branch/master/graph/badge.svg)](https://codecov.io/gh/nicwest/notsouid)
+
 notsouid
 ========
 
