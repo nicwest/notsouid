@@ -8,6 +8,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ### Added
 - tox for testing legacy python
 - travis for ci 
+- codecov for coverage
 
 ## [0.0.2] - 2017-07-08
 ### Fixed
